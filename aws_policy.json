@@ -1,0 +1,48 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:PutItem",
+                "dynamodb:DescribeTable",
+                "dynamodb:DeleteItem",
+                "s3:ListBucketVersions",
+                "dynamodb:GetItem",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:dynamodb:us-east-2:543598237179:table/tien-test-dynamodb",
+                "arn:aws:s3:::tien-test-terraform"
+            ]
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": "s3:ListAllMyBuckets",
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::tien-test-terraform/*"
+        },
+        {
+            "Sid": "VPCFullAcess",
+            "Effect": "Allow",
+            "Action": "ec2:*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:Region": "us-east-2"
+                }
+            }
+        }
+    ]
+}
