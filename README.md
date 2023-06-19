@@ -2,9 +2,9 @@
 
 ## Terraform Installation
 
-Follow this [instruction] [Homebrew]:
+Follow this [instruction] [Homebrew]
 
-
+Terraform version: v1.4.6
 
 ## Terraform S3 + Dynammo Backend
 
